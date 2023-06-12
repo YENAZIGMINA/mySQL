@@ -9,11 +9,11 @@
 ![image](https://github.com/YENAZIGMINA/mySQL/assets/129706758/d81068e3-eb49-496c-8bd5-ef3284b2b629)
 
 * 데이타베이스 생성
-* 
+
 create database member;
 
 * 데이타베이스 선택하기
-* 
+
 use member;
 
 * 테이블 만들기
@@ -36,7 +36,7 @@ SELECT * FROM MEMBER;
 INSERT INTO member VALUES(NULL,"토마스",20);
 
 * 데이타 지우기
-* 
+
 -- DELETE FROM 테이블이름 WHERE 조건;
 
 DELETE FROM member WHERE toy_id = 2;
