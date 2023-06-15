@@ -62,3 +62,32 @@ SELECT * FROM member_table ORDER BY salary DESC;
 
 -- 키가 165이상인 사람 > 키순대로 정렬 > 이름 ㄱㄴㄷ 순으로
 SELECT * FROM member_table WHERE height>=165 ORDER BY height DESC, mb_name ASC;
+
+-- 쿼리문의 순서 (구해오리)
+-- SELECT 열이름 / (*은 전체)
+-- FROM 테이블이름
+-- WHERE 조건문
+-- GROUP BY 열이름
+-- HAVING 조건문
+-- ORDER BY 열이름
+-- LIMIT 숫자
+
+-- LIMIT 출력하는 개수를 제한
+SELECT * FROM member_table LIMIT 3;
+
+-- LIMIT 2,3 : 2이후부터 3개 출력
+SELECT * FROM member_table LIMIT 2,3;
+
+SELECT * FROM member_table WHERE mb_name LIKE '박%';  # %는 뒤에 어떤 글자가 와도 된다
+
+SELECT * FROM member_table WHERE mb_name LIKE '박%자'; # LIKE : 패턴매칭
+
+-- IN ('') 안에 작성한 결과값만 도출
+SELECT * FROM member_table WHERE mb_name IN('강꾸준','박일자') ORDER BY mb_name ASC;
+
+-- 지역이 경상북도 또는 충청북도인 행을 선택하세요
+SELECT * FROM member_table WHERE address LIKE '경상북도%' OR  address LIKE '충청북도%';
+
+-- 수정하기 UPDATE
+-- 이름이 이합격인 사람의 주소를 '경상남도 경성대학교'로 바꿔라
+UPDATE member_table SET address='경상남도 경성대학교' WHERE mb_name="이합격";
